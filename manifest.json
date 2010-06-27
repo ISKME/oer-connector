@@ -1,0 +1,12 @@
+{
+  "name": "OER Connector",
+  "version": "0.4",
+  "description": "Connecting the World to the Commons.",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "popup": "popup.html"
+  },
+  "permissions": [
+    "tabs"
+  ]
+}

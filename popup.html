@@ -1,0 +1,27 @@
+<style>
+body {
+  min-width:200px;
+}
+</style>
+
+<script>
+chrome.tabs.getSelected(null, function(tab) {
+  document.getElementById('link').value = tab.url;
+});
+</script>
+
+<form id="content" action="submit.php" method="post"> 
+    Link: <input readonly type="text" name="link" id="link" value=""><br>
+    <!-- we will get a pull down menu here soon -->
+    What's the subject?<br>
+    <input type="radio" name="subject" value="english">English<br>
+    <input type="radio" name="subject" value="math">Mathematics<br>
+    <input type="radio" name="subject" value="other">Some Important Stuff<br>
+    How good is the material?<br>
+    <input type="radio" name="rating" value="1"><img src="star.png" alt="Star"><br>
+    <input type="radio" name="rating" value="2"><img src="star.png" alt="Star"><img src="star.png" alt="Star"><br>
+    <input type="radio" name="rating" value="3"><img src="star.png" alt="Star"><img src="star.png" alt="Star"><img src="star.png" alt="Star"><br>
+    <input type="radio" name="rating" value="4"><img src="star.png" alt="Star"><img src="star.png" alt="Star"><img src="star.png" alt="Star"><img src="star.png" alt="Star"><br>
+    <input type="radio" name="rating" value="5"><img src="star.png" alt="Star"><img src="star.png" alt="Star"><img src="star.png" alt="Star"><img src="star.png" alt="Star"><img src="star.png" alt="Star"><br>
+    <input type="submit" value="Submit" /> 
+</form>
