@@ -1,20 +1,36 @@
+<!-- some style changes -->
 <style type="text/css">
-body { min-width:200px; }
+body { 
+  min-width:200px;
+  min-height:200px;
+}
 #slider { margin: 10px; }
 </style>
 
-<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
+<!-- load some more stylesheets -->
+<link href="css/jquery-ui.css" rel="stylesheet" type="text/css"/>
+<link href="css/pop.css" media="all" rel="stylesheet" type="text/css"/>
 
+<!-- this is jquery 1.4.2 and jquery-ui 1.8.2 -->
+<script src="lib/jquery.min.js"></script>
+<script src="lib/jquery-ui.min.js"></script>
+<script src="lib/jquery.pop.js"></script>
+
+<!-- we initialize the dropdown here -->
+<script type='text/javascript'>
+   $(document).ready(function(){
+     $.pop();
+   });
+</script>
+
+<!-- and then the slider here -->
 <script>
   $(document).ready(function() {
     $("#slider").slider();
   });
 </script>
 
+<!-- now grab the url from the current tab -->
 <script>
 chrome.tabs.getSelected(null, function(tab) {
   document.getElementById('link').value = tab.url;
@@ -23,22 +39,17 @@ chrome.tabs.getSelected(null, function(tab) {
 
 <form id="content" action="submit.php" method="post"> 
     Link: <input readonly type="text" name="link" id="link" value=""><br>
-    <!-- we will get a pull down menu here soon -->
     What's the subject?<br>
+    <div class='pop'>
     <input type="radio" name="subject" value="arts">Arts<br>
     <input type="radio" name="subject" value="business">Business<br>
     <input type="radio" name="subject" value="humanities">Humanities<br>
     <input type="radio" name="subject" value="math">Mathematics<br>
     <input type="radio" name="subject" value="science">Science and Technology<br>
     <input type="radio" name="subject" value="social">Social Sciences<br>
+    </div><br>
     How good is the material?<br>
-    <!-- we don't want these right now
-     <input type="radio" name="rating" value="1"><img src="star.png" alt="Star"><br>
-    <input type="radio" name="rating" value="2"><img src="star.png" alt="Star"><img src="star.png" alt="Star"><br>
-    <input type="radio" name="rating" value="3"><img src="star.png" alt="Star"><img src="star.png" alt="Star"><img src="star.png" alt="Star"><br>
-    <input type="radio" name="rating" value="4"><img src="star.png" alt="Star"><img src="star.png" alt="Star"><img src="star.png" alt="Star"><img src="star.png" alt="Star"><br>
-    <input type="radio" name="rating" value="5"><img src="star.png" alt="Star"><img src="star.png" alt="Star"><img src="star.png" alt="Star"><img src="star.png" alt="Star"><img src="star.png" alt="Star"><br>
-    -->
     <div id="slider"></div>
+    <input type="checkbox" name="collection" value="collection">Add to my collection<br><br>
     <input type="submit" value="Submit" /> 
 </form>
