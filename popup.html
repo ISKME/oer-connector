@@ -1,8 +1,19 @@
-<style>
-body {
-  min-width:200px;
-}
+<style type="text/css">
+body { min-width:200px; }
+#slider { margin: 10px; }
 </style>
+
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $("#slider").slider();
+  });
+</script>
 
 <script>
 chrome.tabs.getSelected(null, function(tab) {
@@ -14,14 +25,20 @@ chrome.tabs.getSelected(null, function(tab) {
     Link: <input readonly type="text" name="link" id="link" value=""><br>
     <!-- we will get a pull down menu here soon -->
     What's the subject?<br>
-    <input type="radio" name="subject" value="english">English<br>
+    <input type="radio" name="subject" value="arts">Arts<br>
+    <input type="radio" name="subject" value="business">Business<br>
+    <input type="radio" name="subject" value="humanities">Humanities<br>
     <input type="radio" name="subject" value="math">Mathematics<br>
-    <input type="radio" name="subject" value="other">Some Important Stuff<br>
+    <input type="radio" name="subject" value="science">Science and Technology<br>
+    <input type="radio" name="subject" value="social">Social Sciences<br>
     How good is the material?<br>
-    <input type="radio" name="rating" value="1"><img src="star.png" alt="Star"><br>
+    <!-- we don't want these right now
+     <input type="radio" name="rating" value="1"><img src="star.png" alt="Star"><br>
     <input type="radio" name="rating" value="2"><img src="star.png" alt="Star"><img src="star.png" alt="Star"><br>
     <input type="radio" name="rating" value="3"><img src="star.png" alt="Star"><img src="star.png" alt="Star"><img src="star.png" alt="Star"><br>
     <input type="radio" name="rating" value="4"><img src="star.png" alt="Star"><img src="star.png" alt="Star"><img src="star.png" alt="Star"><img src="star.png" alt="Star"><br>
     <input type="radio" name="rating" value="5"><img src="star.png" alt="Star"><img src="star.png" alt="Star"><img src="star.png" alt="Star"><img src="star.png" alt="Star"><img src="star.png" alt="Star"><br>
+    -->
+    <div id="slider"></div>
     <input type="submit" value="Submit" /> 
 </form>
