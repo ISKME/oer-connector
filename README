@@ -3,3 +3,11 @@ OER Connector -- Connecting the World to the Commons.
 A chromium extension connecting people to oercommons.org.
 
 OER Connector is licensed under a MIT License. See LICENSE for details.
+
+To install OER Connector, please follow these instructions:
+
+* Download the latest version from here: http://github.com/sdziallas/oer-connector/zipball/master
+* Unpack the resulting file in a directory.
+* Open Chromium and bring the extensions screen up by clicking on the tools menu in the top right corner.
+* Click on Developer Mode and Load an unpacked Extension.
+* Select the directory you created above in the file dialog and click OK to load the OER Connector extension.
