@@ -25,8 +25,18 @@ body {
 
 <!-- and then the slider here -->
 <script>
-  $(document).ready(function() {
-    $("#slider").slider();
+  var rating = new Array('A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D', 'D-', 'F');
+  $(function() {
+    $("#slider").slider({
+      value:0,
+      min: 0,
+      max: 12,
+      step: 1,
+      slide: function(event, ui) {
+        $("#grade").val(rating[ui.value]);
+        }
+    });
+    $("#grade").val(rating[$("#slider").slider("value")]);
   });
 </script>
 
@@ -49,8 +59,8 @@ chrome.tabs.getSelected(null, function(tab) {
     <input type="radio" name="subject" value="social">Social Sciences<br>
     </div><br>
     How good is the material?<br>
-    <!-- implement lots of conditions to use school rating -->
     <div id="slider"></div>
+    Your rating is: <input readonly type="text" name="grade" id="grade" value=""><br>
     <input type="checkbox" name="collection" value="collection">Add to my collection<br><br>
     <input type="submit" value="Submit" /> 
 </form>
