@@ -7,23 +7,12 @@ body {
 #slider { margin: 10px; }
 </style>
 
-<!-- load some more stylesheets -->
-<link href="css/jquery-ui.css" rel="stylesheet" type="text/css"/>
-<link href="css/pop.css" media="all" rel="stylesheet" type="text/css"/>
-
 <!-- this is jquery 1.4.2 and jquery-ui 1.8.2 -->
+<link href="css/jquery-ui.css" rel="stylesheet" type="text/css"/>
 <script src="lib/jquery.min.js"></script>
 <script src="lib/jquery-ui.min.js"></script>
-<script src="lib/jquery.pop.js"></script>
 
-<!-- we initialize the dropdown here -->
-<script type='text/javascript'>
-   $(document).ready(function(){
-     $.pop();
-   });
-</script>
-
-<!-- and then the slider here -->
+<!-- initialize the slider here -->
 <script>
   var rating = new Array('A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D', 'D-', 'F');
   $(function() {
@@ -40,13 +29,7 @@ body {
   });
 </script>
 
-<!-- now grab the url from the current tab -->
-<script>
-chrome.tabs.getSelected(null, function(tab) {
-  document.getElementById('link').value = tab.url;
-});
-</script>
-
+<!-- and then the dialog here -->
 <script type="text/javascript">
   $.fx.speeds._default = 1000;
   $(function() {
@@ -56,16 +39,22 @@ chrome.tabs.getSelected(null, function(tab) {
       hide: 'blind'
     });
 		
-    $('#opener').click(function() {
+    $('#button').click(function() {
       $('#dialog').dialog('open');
       return false;
     });
   });
 </script>
 
+<!-- now grab the url from the current tab -->
+<script>
+chrome.tabs.getSelected(null, function(tab) {
+  document.getElementById('link').value = tab.url;
+});
+</script>
+
 <form id="content" action="submit.php" method="post"> 
     Link: <input readonly type="text" name="link" id="link" value="" style="border:0"><br>
-    <!-- <div class='pop'> -->
     <div id="dialog" title="What's the subject?">
     <input type="radio" name="subject" value="arts">Arts<br>
     <input type="radio" name="subject" value="business">Business<br>
@@ -74,7 +63,7 @@ chrome.tabs.getSelected(null, function(tab) {
     <input type="radio" name="subject" value="science">Science and Technology<br>
     <input type="radio" name="subject" value="social">Social Sciences<br>
     </div>
-    <button id="opener">Select Subject</button><br>
+    <input type="submit" id="button" value="Select Subject"><br>
     How good is the material?<br>
     <div id="slider"></div>
     Your rating is: <input readonly type="text" name="grade" id="grade" value="" style="border:0"><br>
