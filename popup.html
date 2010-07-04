@@ -1,8 +1,8 @@
 <!-- some style changes -->
 <style type="text/css">
 body { 
-  min-width:200px;
-  min-height:200px;
+  min-width:300px;
+  min-height:100px;
 }
 #slider { margin: 10px; }
 </style>
@@ -47,20 +47,37 @@ chrome.tabs.getSelected(null, function(tab) {
 });
 </script>
 
+<script type="text/javascript">
+  $.fx.speeds._default = 1000;
+  $(function() {
+    $('#dialog').dialog({
+      autoOpen: false,
+      show: 'blind',
+      hide: 'blind'
+    });
+		
+    $('#opener').click(function() {
+      $('#dialog').dialog('open');
+      return false;
+    });
+  });
+</script>
+
 <form id="content" action="submit.php" method="post"> 
-    Link: <input readonly type="text" name="link" id="link" value=""><br>
-    What's the subject?<br>
-    <div class='pop'>
+    Link: <input readonly type="text" name="link" id="link" value="" style="border:0"><br>
+    <!-- <div class='pop'> -->
+    <div id="dialog" title="What's the subject?">
     <input type="radio" name="subject" value="arts">Arts<br>
     <input type="radio" name="subject" value="business">Business<br>
     <input type="radio" name="subject" value="humanities">Humanities<br>
     <input type="radio" name="subject" value="math">Mathematics<br>
     <input type="radio" name="subject" value="science">Science and Technology<br>
     <input type="radio" name="subject" value="social">Social Sciences<br>
-    </div><br>
+    </div>
+    <button id="opener">Select Subject</button><br>
     How good is the material?<br>
     <div id="slider"></div>
-    Your rating is: <input readonly type="text" name="grade" id="grade" value=""><br>
-    <input type="checkbox" name="collection" value="collection">Add to my collection<br><br>
+    Your rating is: <input readonly type="text" name="grade" id="grade" value="" style="border:0"><br>
+    <input type="checkbox" name="collection" value="collection">Add to my collection<br>
     <input type="submit" value="Submit" /> 
 </form>
