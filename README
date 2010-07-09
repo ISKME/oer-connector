@@ -11,3 +11,10 @@ To install OER Connector, please follow these instructions:
 * Open Chromium and bring the extensions screen up by clicking on the tools menu in the top right corner.
 * Click on Developer Mode and Load an unpacked Extension.
 * Select the directory you created above in the file dialog and click OK to load the OER Connector extension.
+
+Setup your own server:
+
+* Copy submit.php and data.txt from the backend directory to a publically accessible place.
+* Open manifest.json and adjust the domain name in line 11.
+* Change the direct URL to the submit.php script in line 39 of the popup.html file.
+* Reload the extension and you should be good to go.
