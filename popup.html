@@ -1,7 +1,7 @@
 <!-- some style changes -->
 <style type="text/css">
 body { 
-  min-width:300px;
+  min-width:250px;
   min-height:100px;
 }
 #slider { margin: 10px; }
@@ -29,22 +29,6 @@ body {
   });
 </script>
 
-<!-- and then the dialog here -->
-<script type="text/javascript">
-  $(function() {
-    $('#dialog').dialog({
-      autoOpen: false,
-      show: 'blind',
-      hide: 'blind'
-    });
-		
-    $('#button').click(function() {
-      $('#dialog').dialog('open');
-      return false;
-    });
-  });
-</script>
-
 <!-- now grab the url from the current tab -->
 <script>
 chrome.tabs.getSelected(null, function(tab) {
@@ -53,19 +37,19 @@ chrome.tabs.getSelected(null, function(tab) {
 </script>
 
 <form id="content" action="submit.php" method="post"> 
-    Link: <input readonly type="text" name="link" id="link" value="" style="border:0"><br>
-    <div id="dialog" title="What's the subject?">
-    <input type="radio" name="subject" value="arts">Arts<br>
-    <input type="radio" name="subject" value="business">Business<br>
-    <input type="radio" name="subject" value="humanities">Humanities<br>
-    <input type="radio" name="subject" value="math">Mathematics<br>
-    <input type="radio" name="subject" value="science">Science and Technology<br>
-    <input type="radio" name="subject" value="social">Social Sciences<br>
-    </div>
-    <input type="submit" id="button" value="Select Subject"><br>
+    Link: <input readonly type="text" name="link" id="link" style="border:0" size="20"><br>
+    What's the subject?
+    <select name="subject">
+    <option value="arts">Arts
+    <option value="business">Business
+    <option value="humanities">Humanities
+    <option value="math">Mathematics
+    <option value="science">Science and Technology
+    <option value="social">Social Sciences
+    </select><br>
     How good is the material?<br>
     <div id="slider"></div>
-    Your rating is: <input readonly type="text" name="grade" id="grade" value="" style="border:0"><br>
+    Your rating is: <input readonly type="text" name="grade" id="grade" style="border:0" size="2"><br>
     <input type="checkbox" name="collection" value="collection">Add to my collection<br>
     <input type="submit" value="Submit" /> 
 </form>
