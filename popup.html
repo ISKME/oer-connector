@@ -12,8 +12,8 @@ body {
 <script src="lib/jquery.min.js"></script>
 <script src="lib/jquery-ui.min.js"></script>
 
-<!-- initialize the slider here -->
 <script>
+  // initialize the slider here
   var rating = new Array('A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'C-', 'D+', 'D', 'D-', 'F');
   $(function() {
     $("#slider").slider({
@@ -27,13 +27,10 @@ body {
     });
     $("#grade").val(rating[$("#slider").slider("value")]);
   });
-</script>
-
-<!-- now grab the url from the current tab -->
-<script>
-chrome.tabs.getSelected(null, function(tab) {
-  document.getElementById('link').value = tab.url;
-});
+  // now grab the url from the current tab
+  chrome.tabs.getSelected(null, function(tab) {
+    document.getElementById('link').value = tab.url;
+  });
 </script>
 
 <form id="content" action="http://doc.iskme.org/oer-connector/submit.php" method="get"> 
