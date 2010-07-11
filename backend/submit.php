@@ -1,15 +1,14 @@
 <?php
-$handle = fopen("/var/www/html/oer-connector/data.txt","a");
-if ($handle) {
-  // Open data file in append mode
-  fwrite($handle,$_GET['link']);
-  fwrite($handle,' | ');
-  fwrite($handle,$_GET['subject']);
-  fwrite($handle,' | ');
-  fwrite($handle,$_GET['grade']);
-  fwrite($handle,' | ');
-  fwrite($handle,$_GET['collection']);
-  fwrite($handle,"\n");
-}
-fclose($handle);
+
+$database = new SQLiteDatabase('/var/www/html/oer-connector/data.db', 0666, $error);
+
+$link = $_GET['link'];
+$subject = $_GET['subject'];
+$grade = $_GET['grade'];
+$collection = $_GET['collection'];
+
+$query = "INSERT INTO content(link, subject, grade, collection) VALUES ('$link', '$subject', '$grade', '$collection')";
+
+$results = $database->queryexec($query);
+
 ?>
