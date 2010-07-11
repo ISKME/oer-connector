@@ -14,8 +14,7 @@ To install OER Connector, please follow these instructions:
 
 Setup your own server:
 
-* If you want to recreate data.db, execute: sqlite3 data.db "CREATE TABLE content(link text, subject text, grade text, collection text);"
-* Copy submit.php from the backend directory to a publically accessible place.
+* Copy submit.php and data.txt rom the backend directory to a publically accessible place.
 * Open manifest.json and adjust the domain name in line 11.
 * Change the direct URL to the submit.php script in line 39 of the popup.html file.
 * Reload the extension and you should be good to go.
