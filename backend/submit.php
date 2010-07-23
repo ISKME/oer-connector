@@ -1,7 +1,7 @@
 <!-- this is jquery 1.4.2 and jquery-ui 1.8.2 -->
-<link href="css/jquery-ui.css" rel="stylesheet" type="text/css"/>
-<script src="lib/jquery.min.js"></script>
-<script src="lib/jquery-ui.min.js"></script>
+<link href="jquery-ui.css" rel="stylesheet" type="text/css"/>
+<script src="jquery.min.js"></script>
+<script src="jquery-ui.min.js"></script>
 
 <script>
   // initialize the slider here
