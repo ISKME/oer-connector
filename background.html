@@ -1,0 +1,15 @@
+<html>
+<head>
+<script>
+  // when the icon gets clicked...
+  chrome.browserAction.onClicked.addListener(function(tab) {
+    // ...grab the url from the current tab
+    chrome.tabs.getSelected(null, function(tab) {
+      document.getElementById('link').value = tab.url;
+    });
+    // and call the new tab!
+  chrome.tabs.create({url:'http://doc.iskme.org/oer-connector/submit.php?link=' + tab.url});
+  });
+</script>
+</head>
+</html>
