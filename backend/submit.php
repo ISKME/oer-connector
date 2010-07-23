@@ -1,3 +1,11 @@
+<!-- some style changes -->
+<style type="text/css">
+body { 
+  max-width:250px;
+}
+#slider { margin: 10px; }
+</style>
+
 <!-- this is jquery 1.4.2 and jquery-ui 1.8.2 -->
 <link href="jquery-ui.css" rel="stylesheet" type="text/css"/>
 <script src="jquery.min.js"></script>
@@ -23,7 +31,7 @@
 <form id="content" method="get" action="">
     <fieldset>
       <legend>OER Connector</legend>
-      <label for="link">Link:</label> <input readonly id="link" class="text" name="link" style="border:0" size="20" type="text">
+      Link: <?php echo $_GET['link']; ?> <br>
       What's the subject?
       <select name="subject">
         <option value="arts">Arts
