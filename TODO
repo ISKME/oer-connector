@@ -8,6 +8,8 @@ SERVER:
 
 * Match all input fields to http://www.oercommons.org/courses/add_course_form
 
+* Parse the CURL data into an actual variable
+
 * Grep for different fields in the target page and pass up in the GET request:
   * Title (whatever is in the <title> tag)
   * Any Creative Commons license URLs
