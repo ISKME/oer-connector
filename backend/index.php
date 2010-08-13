@@ -48,11 +48,26 @@
 // RENDER THIS BLOCK IF THERE'S FORM DATA
 if ($_GET['link'])
 {
+  // Fetch the link and parse it to prepopulate the PHP page.
+  // Helpful notes at http://blog.unitedheroes.net/curl/
+  $curl_handle=curl_init();
+  curl_setopt($curl_handle,CURLOPT_URL,$_GET['link']);
+  curl_setopt ($curl_handle, CURLOPT_RETURNTRANSFER, 1); 
+  $page_content = curl_exec($curl_handle);
+  curl_close($curl_handle);
+
+  // Match for TITLE.
+  $regex='/<title>(.*?)<\/title>/';
+  if (preg_match($regex,$page_content,$matches)) {
+    $page_title = $matches[1];
+  }
+
 ?>
 	
   <div id="content">
     <form action="index.php">
       <h3>Link: <?php echo $_GET['link']; ?></h3>
+      <h3>Title: <?php echo $page_title; ?></h3>
       <h3>Standards Alignment</h3>
       <select id="standards" class="multiselect" multiple="multiple" name="standards[]">
 <?php include 'standards/CC-MATH.php'?>
@@ -74,19 +89,6 @@ if ($_GET['link'])
 
       <input type="submit" value="Submit Form"/>
     </form>
-
-  <h3>URL Contents:</h3>
-  <pre>
-<?php
-
-// Helpful notes at http://blog.unitedheroes.net/curl/
-$curl_handle=curl_init();
-curl_setopt($curl_handle,CURLOPT_URL,$_GET['link']);
-curl_exec($curl_handle);
-curl_close($curl_handle);
-
-?>
-  </pre>
 
   </div> 
 
