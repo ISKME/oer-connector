@@ -1,0 +1,8 @@
+{
+    "id": "jid0-0aqaU8G0Z9U5fK5SbkAi9XAWvvU", 
+    "dependencies": [
+        "jetpack-core"
+    ], 
+    "description": "Connecting the World to the Commons.", 
+    "author": "Sebastian Dziallas (http://sdziallas.com)"
+}
