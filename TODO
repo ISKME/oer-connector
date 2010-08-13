@@ -1,0 +1,11 @@
+The Big OER Ninja TODO List
+
+CLIENT:
+
+* Figure out how to grep for CC licenses using JS regex and send it up as part of the request (can be extended to other text searches later)
+
+* Port the whole plugin to Firefox.  :)
+
+SERVER: 
+
+* Match all input fields to http://www.oercommons.org/courses/add_course_form
