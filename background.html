@@ -8,7 +8,7 @@
       document.getElementById('link').value = tab.url;
     });
     // and call the new tab!
-  chrome.tabs.create({url:'http://doc.iskme.org/oer-connector/submit.php?link=' + tab.url});
+  chrome.tabs.create({url:'http://doc.iskme.org/oer-connector/backend/index.php?link=' + tab.url});
   });
 </script>
 </head>
