@@ -18,3 +18,5 @@ Setup your own server:
 * Open manifest.json and adjust the domain name in line 11.
 * Change the direct URL to the submit.php script in line 39 of the popup.html file.
 * Reload the extension and you should be good to go.
+
+(Brought to you by Team OER Ninja!)
