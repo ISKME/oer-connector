@@ -1,8 +1,11 @@
 {
-    "id": "jid0-0aqaU8G0Z9U5fK5SbkAi9XAWvvU", 
+    "name": "oer-connector",
+    "fullName": "OER Connector",
+    "description": "Connecting the World to the Commons.", 
+    "version": "0.7",
+    "license": "MIT",
     "dependencies": [
         "jetpack-core"
-    ], 
-    "description": "Connecting the World to the Commons.", 
-    "author": "Sebastian Dziallas (http://sdziallas.com)"
+    ],
+    "id": "jid0-0aqaU8G0Z9U5fK5SbkAi9XAWvvU",
 }
