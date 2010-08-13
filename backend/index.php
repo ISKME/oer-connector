@@ -79,6 +79,7 @@ if ($_GET['link'])
   <pre>
 <?php
 
+// Helpful notes at http://blog.unitedheroes.net/curl/
 $curl_handle=curl_init();
 curl_setopt($curl_handle,CURLOPT_URL,$_GET['link']);
 curl_exec($curl_handle);
