@@ -74,6 +74,19 @@ if ($_GET['link'])
 
       <input type="submit" value="Submit Form"/>
     </form>
+
+  <h3>URL Contents:</h3>
+  <pre>
+<?php
+
+$curl_handle=curl_init();
+curl_setopt($curl_handle,CURLOPT_URL,$_GET['link']);
+curl_exec($curl_handle);
+curl_close($curl_handle);
+
+?>
+  </pre>
+
   </div> 
 
 <?php
