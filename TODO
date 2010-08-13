@@ -2,7 +2,14 @@ The Big OER Ninja TODO List
 
 CLIENT:
 
-* Figure out how to grep for CC licenses using JS regex and send it up as part of the request (can be extended to other text searches later)
+* Grep for different fields in the target page and pass up in the GET request:
+  * Title (whatever is in the <title> tag)
+  * Any Creative Commons license URLs
+  * Metadata, if available:
+    <META name="author" content="John Doe">
+    <META name="copyright" content="&copy; 1997 Acme Corp.">
+    <META name="keywords" content="corporate,guidelines,cataloging">
+    <META name="date" content="1994-11-06T08:49:37+00:00">
 
 * Port the whole plugin to Firefox.  :)
 
