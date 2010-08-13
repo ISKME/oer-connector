@@ -45,11 +45,16 @@
   </div>
 
 <?php 
-// RENDER THIS BLOCK IF THERE'S FORM DATA
+
+// URL PROCESSING BLOCK.
+// This block of PHP is called if there's a URL -- which means we presume
+// that it's an attempted submission to OER-C.
+
 if ($_GET['link'])
 {
   // Fetch the link and parse it to prepopulate the PHP page.
   // Helpful notes at http://blog.unitedheroes.net/curl/
+
   $curl_handle=curl_init();
   curl_setopt($curl_handle,CURLOPT_URL,$_GET['link']);
   curl_setopt ($curl_handle, CURLOPT_RETURNTRANSFER, 1); 
@@ -62,12 +67,20 @@ if ($_GET['link'])
     $page_title = $matches[1];
   }
 
+  // Match for CC LICENSE URL.
+  // This doesn't work, but it's a start.
+  $regex='/<a href="(.*creativecommons.*)">/';
+  if (preg_match($regex,$page_content,$matches)) {
+    $page_license= $matches[1];
+  }
+
 ?>
 	
   <div id="content">
     <form action="index.php">
       <h3>Link: <?php echo $_GET['link']; ?></h3>
       <h3>Title: <?php echo $page_title; ?></h3>
+      <h3>License: <?php echo $page_license; ?></h3>
       <h3>Standards Alignment</h3>
       <select id="standards" class="multiselect" multiple="multiple" name="standards[]">
 <?php include 'standards/CC-MATH.php'?>
