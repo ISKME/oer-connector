@@ -5,6 +5,7 @@ CLIENT:
 * Port the whole plugin to Firefox.  :)
 * Installation instructions for Firefox plug-in.
 * Figure out a notification mechanism when URL match is positive
+* Make up a script that automagically builds releases from GIT
 
 SERVER: 
 
