@@ -3,12 +3,12 @@ The Big OER Ninja TODO List
 CLIENT:
 
 * Port the whole plugin to Firefox.  :)
+* Installation instructions for Firefox plug-in.
+* Figure out a notification mechanism when URL match is positive
 
 SERVER: 
 
 * Match all input fields to http://www.oercommons.org/courses/add_course_form
-
-* Parse the CURL data into an actual variable
 
 * Grep for different fields in the target page and pass up in the GET request:
   * Title (whatever is in the <title> tag)
@@ -18,3 +18,6 @@ SERVER:
     <META name="copyright" content="&copy; 1997 Acme Corp.">
     <META name="keywords" content="corporate,guidelines,cataloging">
     <META name="date" content="1994-11-06T08:49:37+00:00">
+
+* Simulate "url API"
+* Simulate "user API"
