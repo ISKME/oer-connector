@@ -16,7 +16,7 @@ If you are using Chrome:
 
 If you are using Firefox:
 
-* Grab the oer-connector.crx file, drop it in Firefox' address bar and press enter.
+* Grab the oer-connector.xpi file, drop it in Firefox' address bar and press enter.
 * Approve the installation of OER Connector.
 
 Setup your own server:
