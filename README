@@ -7,16 +7,23 @@ OER Connector is licensed under a MIT License. See LICENSE for details.
 To install OER Connector, please follow these instructions:
 
 * Download the latest version from here: http://github.com/sdziallas/oer-connector/zipball/master
-* Unpack the resulting file in a directory.
-* Open Chromium and bring the extensions screen up by clicking on the tools menu in the top right corner.
-* Click on Developer Mode and Load an unpacked Extension.
-* Select the directory you created above in the file dialog and click OK to load the OER Connector extension.
+* Unpack the resulting file in a directory and switch to the release folder.
+
+If you are using Chrome:
+
+* Grab the oer-connector.crx file and drop it in Chrome's address bar.
+* Approve the installation of OER Connector.
+
+If you are using Firefox:
+
+* Grab the oer-connector.crx file, drop it in Firefox' address bar and press enter.
+* Approve the installation of OER Connector.
 
 Setup your own server:
 
-* Copy submit.php and data.txt rom the backend directory to a publically accessible place.
-* Open manifest.json and adjust the domain name in line 11.
-* Change the direct URL to the submit.php script in line 39 of the popup.html file.
-* Reload the extension and you should be good to go.
+* Copy the backend directory to a publically accessible place.
+* Open manifest.json and adjust the domain name.
+* Change the direct URLs in the extensions if necessary.
+* Reload the extensions and you should be good to go.
 
 (Brought to you by Team OER Ninja!)
