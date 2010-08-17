@@ -20,9 +20,3 @@ SERVER:
     <META name="keywords" content="corporate,guidelines,cataloging">
     <META name="date" content="1994-11-06T08:49:37+00:00">
 
-* Simulate "url fetch" API.  
-  GET of /urlfetch?url=escapedurl should return page metadata if page 
-  is in OER-C, or "not found" if page is not in OER-C.
-
-* Build out new php code that uses url data if "get url" is positive.
-  
