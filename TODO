@@ -13,6 +13,7 @@ SERVER:
 
 * Grep for different fields in the target page and pass up in the GET request:
   * Any Creative Commons license URLs
+    (surprisingly difficult)
   * Metadata, if available:
     <META name="author" content="John Doe">
     <META name="copyright" content="&copy; 1997 Acme Corp.">
