@@ -2,9 +2,9 @@ The Big OER Ninja TODO List
 
 CLIENT:
 
-* Port the whole plugin to Firefox.  :)
-* Installation instructions for Firefox plug-in.
-* Figure out a notification mechanism when URL match is positive
+* Figure out a notification mechanism when URL match is positive using 
+  simulated "urlfetch" API call
+
 * Make up a script that automagically builds releases from GIT
 
 SERVER: 
@@ -12,8 +12,8 @@ SERVER:
 * Match all input fields to http://www.oercommons.org/courses/add_course_form
 
 * Grep for different fields in the target page and pass up in the GET request:
-  * Title (whatever is in the <title> tag)
   * Any Creative Commons license URLs
+    (surprisingly difficult)
   * Metadata, if available:
     <META name="author" content="John Doe">
     <META name="copyright" content="&copy; 1997 Acme Corp.">
