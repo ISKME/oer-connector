@@ -10,11 +10,16 @@
 $link = ($_GET['link']);
 
 $regex='/\.org/';
+$logfile='urlfetch.log';
+$fh = fopen($logfile, 'a');
 if (preg_match($regex,$link,$matches)) {
   print '{"urlfound": "yes"}';
+  fwrite($fh,"yes\n");
 }
 else {
   print '{"urlfound": "no"}';
+  fwrite($fh,"no\n");
 }
+fclose($fh);
 
 ?>
